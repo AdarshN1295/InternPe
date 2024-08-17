@@ -1,0 +1,64 @@
+let  input_ = document.querySelector('input.inputValue');
+
+let btn_ = document.querySelectorAll('button.calc_button')
+btn_.forEach((bt)=>{
+    bt.addEventListener('click', ()=>{
+        input.value = input.value + bt.innerHTML;
+    })
+})
+
+const eqBtn_ = document.querySelector('button.buttoneq.btn--eq');
+
+eqBtn_.addEventListener('click', ()=>{
+
+    // for plus 
+    // if check the input value it check that it includes + or not so if its include it show true, if not it show false.
+  if(input.value.includes('+') == true){
+    let digit = input.value.split('+'); // it create a array
+    input.value = parseInt(digit[0]) + parseInt(digit[1]);
+
+  } else {
+    console.log("Enter a Valid Value!");}
+
+
+
+    // for minus 
+    // if check the input value it check that it includes - or not so if its include it show true, if not it show false.
+  if(input.value.includes('-') == true){
+
+    let digit = input.value.split('-'); // it create a array
+    input.value = parseInt(digit[0]) - parseInt(digit[1]);
+    
+  } else {
+    console.log("Enter a Valid Value!");}
+
+
+    // for multiply 
+    // if check the input value it check that it includes x or not so if its include it show true, if not it show false.
+  if(input.value.includes('x') == true){
+        
+    let digit = input.value.split('x'); // it create a array
+    input.value = parseInt(digit[0]) * parseInt(digit[1]);
+    
+  } else {
+    console.log("Enter a Valid Value!");} 
+
+
+
+    // for Devide 
+    // if check the input value it check that it includes / or not so if its include it show true, if not it show false.
+  if(input.value.includes('/') == true){
+    let digit = input.value.split('/'); // it create a array
+    input.value = parseInt(digit[0]) / parseInt(digit[1]);
+    
+  } else {
+    console.log("Enter a Valid Value!");}
+
+})
+
+
+// for AC 
+// it give blank value to input, so it will show blank.sssss
+let ac_ = document.querySelector('button.buttonAC').addEventListener('click', ()=>{
+    input.value = "";
+})
